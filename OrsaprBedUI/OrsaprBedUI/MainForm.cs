@@ -54,35 +54,75 @@ namespace OrsaprBedUI
                     textBoxWidth,
                     (BedParameters nightstand, string text) =>
                     {
-                        nightstand.Width.Value = double.Parse(text);
+                        try
+                        {
+                            nightstand.Width.Value = double.Parse(text);
+                        }
+                        catch (Exception exception)
+                        {
+                            textBoxWidth.BackColor = Color.Red;
+                            MessageBox.Show(exception.Message);
+                        }
                     }
                 },
                 {
                     textBoxLength,
                     (BedParameters nightstand, string text) =>
                     {
-                        nightstand.Length.Value = double.Parse(text);
+                        try
+                        {
+                            nightstand.Length.Value = double.Parse(text);
+                        }
+                        catch (Exception exception)
+                        {
+                            textBoxLength.BackColor = Color.Red;
+                            MessageBox.Show(exception.Message);
+                        }
                     }
                 },
                 {
                     textBoxHeight,
                     (BedParameters nightstand, string text) =>
                     {
-                        nightstand.Height.Value = double.Parse(text);
+                        try
+                        {
+                            nightstand.Height.Value = double.Parse(text);
+                        }
+                        catch (Exception exception)
+                        {
+                            textBoxHeight.BackColor = Color.Red;
+                            MessageBox.Show(exception.Message);
+                        };
                     }
                 },
                 {
                     textBoxThickness,
                     (BedParameters nightstand, string text) =>
                     {
-                        nightstand.Thickness.Value = double.Parse(text);
+                        try
+                        {
+                            nightstand.Thickness.Value = double.Parse(text);
+                        }
+                        catch (Exception exception)
+                        {
+                            textBoxThickness.BackColor = Color.Red;
+                            MessageBox.Show(exception.Message);
+                        };
                     }
                 },
                 {
                     textBoxDistance,
                     (BedParameters nightstand, string text) =>
                     {
-                        nightstand.Distance.Value = double.Parse(text);
+                        try
+                        {
+                            nightstand.Distance.Value = double.Parse(text);
+                        }
+                        catch (Exception exception)
+                        {
+                            textBoxDistance.BackColor = Color.Red;
+                            MessageBox.Show(exception.Message);
+                        };
                     }
                 }
 
@@ -146,9 +186,9 @@ namespace OrsaprBedUI
                 }
                 catch (ArgumentException exception)
                 {
-                    currentTextBox.BackColor = Color.LightCoral;
+                    
+                    currentTextBox.BackColor = Color.Red;
                     MessageBox.Show(exception.Message);
-                    buttonBuildBed.Enabled = false;
                 }
             }
         }
@@ -192,7 +232,7 @@ namespace OrsaprBedUI
             {
                 _labelList[index].Text = Convert.ToString($"{_parameters[index].NameParameter} " +
                                                           $"({_parameters[index].MinimumValue} - " +
-                                                          $"{_parameters[index].MaximumValue}) mm");
+                                                          $"{_parameters[index].MaximumValue}) мм");
             }
         }
 

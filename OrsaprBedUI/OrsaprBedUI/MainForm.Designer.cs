@@ -67,6 +67,7 @@ namespace OrsaprBedUI
             this.textBoxLength.Name = "textBoxLength";
             this.textBoxLength.Size = new System.Drawing.Size(125, 27);
             this.textBoxLength.TabIndex = 2;
+            this.textBoxLength.Leave += new System.EventHandler(this.TextBoxLeave);
             // 
             // textBoxWidth
             // 
@@ -74,6 +75,7 @@ namespace OrsaprBedUI
             this.textBoxWidth.Name = "textBoxWidth";
             this.textBoxWidth.Size = new System.Drawing.Size(125, 27);
             this.textBoxWidth.TabIndex = 4;
+            this.textBoxWidth.Leave += new System.EventHandler(this.TextBoxLeave);
             // 
             // labelWidth
             // 
@@ -90,6 +92,7 @@ namespace OrsaprBedUI
             this.textBoxHeight.Name = "textBoxHeight";
             this.textBoxHeight.Size = new System.Drawing.Size(125, 27);
             this.textBoxHeight.TabIndex = 6;
+            this.textBoxHeight.Leave += new System.EventHandler(this.TextBoxLeave);
             // 
             // labelHeight
             // 
@@ -106,6 +109,7 @@ namespace OrsaprBedUI
             this.textBoxThickness.Name = "textBoxThickness";
             this.textBoxThickness.Size = new System.Drawing.Size(125, 27);
             this.textBoxThickness.TabIndex = 12;
+            this.textBoxThickness.Leave += new System.EventHandler(this.TextBoxLeave);
             // 
             // labelThickness
             // 
@@ -122,6 +126,7 @@ namespace OrsaprBedUI
             this.textBoxDistance.Name = "textBoxDistance";
             this.textBoxDistance.Size = new System.Drawing.Size(125, 27);
             this.textBoxDistance.TabIndex = 14;
+            this.textBoxDistance.Leave += new System.EventHandler(this.TextBoxLeave);
             // 
             // labelDistance
             // 
