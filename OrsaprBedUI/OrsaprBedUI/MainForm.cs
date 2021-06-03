@@ -21,9 +21,9 @@ namespace OrsaprBedUI
             _textBoxDictionary;
 
         /// <summary>
-        /// Поле хранящее данные о лампе
+        /// Поле хранящее данные о кровати
         /// </summary>
-        private BedParameters _nightstand = new BedParameters { };
+        private BedParameters _bed = new BedParameters { };
 
         /// <summary>
         /// Поле для хранения данных о билдере
@@ -52,11 +52,11 @@ namespace OrsaprBedUI
             {
                 {
                     textBoxWidth,
-                    (BedParameters nightstand, string text) =>
+                    (BedParameters bed, string text) =>
                     {
                         try
                         {
-                            nightstand.Width.Value = double.Parse(text);
+                            bed.Width.Value = double.Parse(text);
                         }
                         catch (Exception exception)
                         {
@@ -67,11 +67,11 @@ namespace OrsaprBedUI
                 },
                 {
                     textBoxLength,
-                    (BedParameters nightstand, string text) =>
+                    (BedParameters bed, string text) =>
                     {
                         try
                         {
-                            nightstand.Length.Value = double.Parse(text);
+                            bed.Length.Value = double.Parse(text);
                         }
                         catch (Exception exception)
                         {
@@ -82,11 +82,11 @@ namespace OrsaprBedUI
                 },
                 {
                     textBoxHeight,
-                    (BedParameters nightstand, string text) =>
+                    (BedParameters bed, string text) =>
                     {
                         try
                         {
-                            nightstand.Height.Value = double.Parse(text);
+                            bed.Height.Value = double.Parse(text);
                         }
                         catch (Exception exception)
                         {
@@ -97,11 +97,11 @@ namespace OrsaprBedUI
                 },
                 {
                     textBoxThickness,
-                    (BedParameters nightstand, string text) =>
+                    (BedParameters bed, string text) =>
                     {
                         try
                         {
-                            nightstand.Thickness.Value = double.Parse(text);
+                            bed.Thickness.Value = double.Parse(text);
                         }
                         catch (Exception exception)
                         {
@@ -112,11 +112,11 @@ namespace OrsaprBedUI
                 },
                 {
                     textBoxDistance,
-                    (BedParameters nightstand, string text) =>
+                    (BedParameters bed, string text) =>
                     {
                         try
                         {
-                            nightstand.Distance.Value = double.Parse(text);
+                            bed.Distance.Value = double.Parse(text);
                         }
                         catch (Exception exception)
                         {
@@ -130,11 +130,11 @@ namespace OrsaprBedUI
 
             _parameters = new List<Parameter>
             {
-                _nightstand.Width,
-                _nightstand.Length,
-                _nightstand.Height,
-                _nightstand.Thickness,
-                _nightstand.Distance,
+                _bed.Width,
+                _bed.Length,
+                _bed.Height,
+                _bed.Thickness,
+                _bed.Distance,
             };
 
             _textBoxList = new List<TextBox>()
@@ -156,7 +156,7 @@ namespace OrsaprBedUI
                 labelDistance,
             };
 
-            _nightstand.DefaultValue();
+            _bed.DefaultValue();
             UpdateFormFields();
             SetLimits();
         }
@@ -175,7 +175,7 @@ namespace OrsaprBedUI
             {
                 try
                 {
-                    currentAction.Invoke(_nightstand, currentTextBox.Text);
+                    currentAction.Invoke(_bed, currentTextBox.Text);
                     currentTextBox.BackColor = Color.White;
                     SetLimits();
                     UpdateFormFields();
@@ -238,7 +238,7 @@ namespace OrsaprBedUI
 
         private void buttonBuildBed_Click(object sender, EventArgs e)
         {
-            _build.BuildNightstand(_nightstand);
+            _build.BuildBed(_bed);
         }
         private void MainForm_Load(object sender, EventArgs e)
         {

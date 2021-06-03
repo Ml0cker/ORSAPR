@@ -10,7 +10,7 @@ namespace ModelBuilder
         /// <summary>
         ///Метод построения кровати
         /// </summary>
-        public void BuildNightstand(BedParameters nightstand)
+        public void BuildBed(BedParameters nightstand)
         {
             KompasConnector.Instance.InitializationKompas();
             // Создание каркаса
