@@ -141,7 +141,7 @@ namespace OrsaprBedUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 302);
+            this.ClientSize = new System.Drawing.Size(750, 302);
             this.Controls.Add(this.textBoxDistance);
             this.Controls.Add(this.labelDistance);
             this.Controls.Add(this.textBoxThickness);
@@ -153,6 +153,8 @@ namespace OrsaprBedUI
             this.Controls.Add(this.textBoxLength);
             this.Controls.Add(this.labelLength);
             this.Controls.Add(this.buttonBuildBed);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MinimizeBox = false;
             this.Name = "MainForm";
             this.Text = "Плагин Кровать";
             this.Load += new System.EventHandler(this.MainForm_Load);

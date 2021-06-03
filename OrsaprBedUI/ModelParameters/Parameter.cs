@@ -34,7 +34,7 @@ namespace ModelParameters
             {
                 if (String.IsNullOrEmpty(NameParameter))
                 {
-                    throw new ArgumentException("Parameter name not specified");
+                    throw new ArgumentException("Имя параметра не определено");
                 }
                 if (_maxValue > 0 && _minValue > 0)
                 {
@@ -44,15 +44,14 @@ namespace ModelParameters
                     }
                     else
                     {
-                        throw new ArgumentException($"Parameter {NameParameter} " +
-                                                    $"should be more then {_maxValue} " +
-                                                    $"and less then {_minValue}");
+                        throw new ArgumentException($"Параметр {NameParameter} " +
+                                                    $"должен быть меньше {_maxValue} " +
+                                                    $"и больше {_minValue}");
                     }
                 }
                 else
                 {
-                    throw new ArgumentException("The minimum value or maximum value of the" +
-                                                " parameter is not specified");
+                    throw new ArgumentException($"Максимальное и минимальное значение параметра {NameParameter} не установлено");
                 }
             }
         }
@@ -73,8 +72,7 @@ namespace ModelParameters
                     }
                     else
                     {
-                        throw new ArgumentException($"Maximum parameter must be more " +
-                                                    $" Minimum parameter = {_minValue}");
+                        throw new ArgumentException($"Максимальное значение не модет быть больше минимального = {_minValue}");
                     }
                 }
                 else
@@ -85,7 +83,7 @@ namespace ModelParameters
                     }
                     else
                     {
-                        throw new ArgumentException($"Maximum parameter must be more 0");
+                        throw new ArgumentException($"Максимальное значение должно быть больше 0");
                     }
                 }
             }
@@ -107,7 +105,7 @@ namespace ModelParameters
                     }
                     else
                     {
-                        throw new ArgumentException($"Minimum parameter must be less Maximum parameter = {_maxValue}");
+                        throw new ArgumentException($"Минимальное значение не должно привышать = {_maxValue}");
                     }
                 }
                 else
@@ -118,7 +116,7 @@ namespace ModelParameters
                     }
                     else
                     {
-                        throw new ArgumentException($"Minimum parameter must be more or less 0");
+                        throw new ArgumentException($"Минимальное значение должно быть больше 0");
                     }
 
                 }
@@ -146,15 +144,14 @@ namespace ModelParameters
                     }
                     else
                     {
-                        throw new ArgumentException($"Parameter {NameParameter} " +
-                                                    $"should be more then {_maxValue} " +
-                                                    $"and less then {_minValue}");
+                        throw new ArgumentException($"Параметр {NameParameter} " +
+                                                    $"должен быть меньше {_maxValue} " +
+                                                    $"и больше {_minValue}");
                     }
                 }
                 else
                 {
-                    throw new ArgumentException("The minimum value or maximum value of the" +
-                                                " parameter is not specified");
+                    throw new ArgumentException($"Максимальное и минимальное значение параметра {NameParameter} не установлено" );
                 }
             }
         }

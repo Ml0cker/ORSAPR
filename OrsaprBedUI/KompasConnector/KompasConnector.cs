@@ -51,18 +51,16 @@ namespace Kompas3DConnector
         {
             try
             {
+
                 if (KompasObject != null)
                 {
                     Document3D.close();
                 }
                 if (KompasObject == null)
                 {
-#if __LIGHT_VERSION__
-                    Type t = Type.GetTypeFromProgID("KOMPASLT.Application.5");
-#else
-                    Type t = Type.GetTypeFromProgID("KOMPAS.Application.5");
-#endif
-                    KompasObject = (KompasObject)Activator.CreateInstance(t);
+                    Type progId = Type.GetTypeFromProgID("KOMPAS.Application.5");
+
+                    KompasObject = (KompasObject)Activator.CreateInstance(progId);
                 }
                 Document3D = (Document3D)KompasObject.Document3D();
                 Document3D.Create(false, true);
