@@ -53,13 +53,6 @@ namespace ModelBuilder
             BossExtrusion(depth, sketchDef, false);
         }
 
-        /// <summary>
-        /// Метод для завершения компаса
-        /// </summary>
-        public void CloseKompas()
-        {
-            KompasConnector.Instance.UnloadKompas();
-        }
 
         /// <summary>
         /// Метод для создания эскиза
