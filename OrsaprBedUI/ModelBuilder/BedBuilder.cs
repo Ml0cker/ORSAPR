@@ -10,24 +10,24 @@ namespace ModelBuilder
         /// <summary>
         ///Метод построения кровати
         /// </summary>
-        public void BuildBed(BedParameters nightstand)
+        public void BuildBed(BedParameters bed)
         {
             KompasConnector.Instance.InitializationKompas();
             // Создание каркаса
-            CreateRectangle(-nightstand.Length.Value / 2 + nightstand.Thickness.Value, -nightstand.Width.Value / 2 + nightstand.Thickness.Value,
-                nightstand.Length.Value - nightstand.Thickness.Value * 2, nightstand.Width.Value - nightstand.Thickness.Value * 2, nightstand.Thickness.Value, 0);
+            CreateRectangle(-bed.Length.Value / 2 + bed.Thickness.Value, -bed.Width.Value / 2 + bed.Thickness.Value,
+                bed.Length.Value - bed.Thickness.Value * 2, bed.Width.Value - bed.Thickness.Value * 2, bed.Thickness.Value, 0);
             // Создание правой боковой стенки
-            CreateRectangle(-nightstand.Length.Value / 2 + nightstand.Thickness.Value, -nightstand.Width.Value / 2,
-                nightstand.Length.Value - nightstand.Thickness.Value * 2, nightstand.Thickness.Value, nightstand.Height.Value, nightstand.Distance.Value);
+            CreateRectangle(-bed.Length.Value / 2 + bed.Thickness.Value, -bed.Width.Value / 2,
+                bed.Length.Value - bed.Thickness.Value * 2, bed.Thickness.Value, bed.Height.Value, bed.Distance.Value);
             // Создание левой боковой стенки
-            CreateRectangle(-nightstand.Length.Value / 2 + nightstand.Thickness.Value, nightstand.Width.Value / 2 - nightstand.Thickness.Value,
-                nightstand.Length.Value - nightstand.Thickness.Value * 2, nightstand.Thickness.Value, nightstand.Height.Value, nightstand.Distance.Value);
+            CreateRectangle(-bed.Length.Value / 2 + bed.Thickness.Value, bed.Width.Value / 2 - bed.Thickness.Value,
+                bed.Length.Value - bed.Thickness.Value * 2, bed.Thickness.Value, bed.Height.Value, bed.Distance.Value);
             // Создание задней стенки
-            CreateRectangle(-nightstand.Length.Value / 2, -nightstand.Width.Value / 2,
-                nightstand.Thickness.Value, nightstand.Width.Value, nightstand.Height.Value, nightstand.Distance.Value);
+            CreateRectangle(-bed.Length.Value / 2, -bed.Width.Value / 2,
+                bed.Thickness.Value, bed.Width.Value, bed.Height.Value, bed.Distance.Value);
             // Создание передней стенки
-            CreateRectangle(nightstand.Length.Value / 2 - nightstand.Thickness.Value, -nightstand.Width.Value / 2,
-                nightstand.Thickness.Value, nightstand.Width.Value, nightstand.Height.Value, nightstand.Distance.Value);
+            CreateRectangle(bed.Length.Value / 2 - bed.Thickness.Value, -bed.Width.Value / 2,
+                bed.Thickness.Value, bed.Width.Value, bed.Height.Value, bed.Distance.Value);
         }
         /// <summary>
         /// Метод для построения параллелипипеда
