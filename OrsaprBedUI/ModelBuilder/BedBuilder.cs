@@ -13,6 +13,7 @@ namespace ModelBuilder
         public void BuildBed(BedParameters bed)
         {
             KompasConnector.Instance.InitializationKompas();
+             //TODO: RSDN
             // Создание каркаса
             CreateRectangle(-bed.Length.Value / 2 + bed.Thickness.Value, -bed.Width.Value / 2 + bed.Thickness.Value,
                 bed.Length.Value - bed.Thickness.Value * 2, bed.Width.Value - bed.Thickness.Value * 2, bed.Thickness.Value, 0);

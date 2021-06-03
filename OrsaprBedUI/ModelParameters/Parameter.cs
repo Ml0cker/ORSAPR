@@ -51,6 +51,7 @@ namespace ModelParameters
                 }
                 else
                 {
+                     //TODO: RSDN
                     throw new ArgumentException($"Максимальное и минимальное значение параметра {NameParameter} не установлено");
                 }
             }
@@ -72,6 +73,7 @@ namespace ModelParameters
                     }
                     else
                     {
+                         //TODO: RSDN
                         throw new ArgumentException($"Максимальное значение не модет быть больше минимального = {_minValue}");
                     }
                 }
@@ -105,6 +107,7 @@ namespace ModelParameters
                     }
                     else
                     {
+                         //TODO: RSDN
                         throw new ArgumentException($"Минимальное значение не должно привышать = {_maxValue}");
                     }
                 }
@@ -144,6 +147,7 @@ namespace ModelParameters
                     }
                     else
                     {
+                        //TODO: Не покрыто тестами
                         throw new ArgumentException($"Параметр {NameParameter} " +
                                                     $"должен быть меньше {_maxValue} " +
                                                     $"и больше {_minValue}");
@@ -151,13 +155,16 @@ namespace ModelParameters
                 }
                 else
                 {
+                     //TODO: RSDN
                     throw new ArgumentException($"Максимальное и минимальное значение параметра {NameParameter} не установлено" );
                 }
             }
         }
 
+        //TODO: XML комментарии?
         public Parameter() { }
 
+        //TODO: XML комментарии?
         public Parameter(string name, double min, double max, double defaultValue)
         {
             this.MinimumValue = min;
@@ -165,7 +172,6 @@ namespace ModelParameters
             this.NameParameter = name;
             this.DefaultValue = defaultValue;
         }
-
 
     }
 }

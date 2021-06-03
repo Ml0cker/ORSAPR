@@ -28,6 +28,7 @@ namespace OrsaprBed.UnitTests
             }
         }
 
+        //TODO: XML комментарии
         /// <summary>
         /// Лист с назаванием параметров
         /// </summary>
@@ -146,6 +147,7 @@ namespace OrsaprBed.UnitTests
             }
         }
 
+        //TODO:
         /*   [TestCase(TestName = "Позитивный метод для DepthHole, производится сложение 3 " +
                                 "параметров и считывание")]
            public void DepthHole_GoodNightstandParameters_ReturnSameDepthHole()

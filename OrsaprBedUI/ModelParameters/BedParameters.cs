@@ -6,13 +6,16 @@ using System.Threading.Tasks;
 
 namespace ModelParameters
 {
+    //TODO: XML комментарии?
     public class BedParameters
     {
-        /// <summary>
-        /// Лист параметров
-        /// </summary>
-        private List<Parameter> parameters = new List<Parameter>();
+         //TODO: RSDN
+         /// <summary>
+         /// Лист параметров
+         /// </summary>
+         private readonly List<Parameter> parameters;
 
+        //TODO:
         /// <summary>
         /// Поле, содержащее длину кровати 
         /// </summary>
@@ -38,8 +41,7 @@ namespace ModelParameters
         /// </summary>
         public Parameter Distance { get; set; }
 
-
-
+         //TODO: RSDN
         public void MaxValue()
         {
             Width.Value = Width.MaximumValue;
@@ -48,6 +50,8 @@ namespace ModelParameters
             Thickness.Value = Thickness.MaximumValue;
             Distance.Value = Distance.MaximumValue;
         }
+
+         //TODO: RSDN
         public void MinValue()
         {
             Width.Value = Width.MinimumValue;
@@ -67,6 +71,8 @@ namespace ModelParameters
             Thickness.Value = Thickness.DefaultValue;
             Distance.Value = Distance.DefaultValue;
         }
+
+        //TODO: XML комментарии?
         public BedParameters()
         {
             this.Width = new Parameter("Ширина кровати",
@@ -79,13 +85,16 @@ namespace ModelParameters
                 8, 14, 10);
             this.Distance = new Parameter("Расстояние от каркаса до верхней части кровати",
                 100, 250, 100);
+            
+            parameters = new List<Parameter>
+            {
+                Width,
+                Length,
+                Height,
+                Thickness,
+                Distance
+            };
 
-
-            parameters.Add(Width);
-            parameters.Add(Length);
-            parameters.Add(Height);
-            parameters.Add(Thickness);
-            parameters.Add(Distance);
         }
     }
 }

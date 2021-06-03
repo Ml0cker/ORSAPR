@@ -23,8 +23,10 @@ namespace Kompas3DConnector
         {
             get
             {
+                //TODO:
                 if (_instance == null)
                     _instance = new KompasConnector();
+
                 return _instance;
             }
         }
@@ -51,7 +53,6 @@ namespace Kompas3DConnector
         {
             try
             {
-
                 if (KompasObject != null)
                 {
                     Document3D.close();
